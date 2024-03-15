@@ -29,6 +29,7 @@ The application supports the following functionalities:
 * M.A.F HAKEEMA - KEG/IT/2021/F/0052 - [Hakeema README.md](https://github.com/fathimahakeema/LMS.git)
 
 
+
 ## My Contributions to the Library Member Management System
 As the group leader for this project, I played a significant role in guiding the development process and ensuring the overall quality of the codebase. Here's a breakdown of my specific contributions:
 
@@ -41,6 +42,24 @@ Conducted code reviews, identifying and addressing potential issues to maintain 
 
 * ### As a developer
 Performed read and update the crud function, as you can see below.
+
+
+## Description of function
+
+`Crud class` helps to execute SQL queries safely by handling parameter binding and query execution, making database interactions easier and more strong.
+
+`DbConnection class` ensures that our application has a single, reusable connection to the MySQL database, making it easy to perform database operations without having to repeatedly establish connections.
+
+`loadMembersIntoTable()` function fetches member information from the database and displays it in a table format on the screen through the GUI
+
+`update()` function updates the details of a member in the database, shows a success message, resets the form, and refreshes the displayed member list.
+
+When press the `Search button`:
+
+* It tries to find a member in the database using their ID.
+* If found, it shows the member's details in the form and prepares the form for updating.
+* If not found, it lets know that the member was not found.
+
 
 
 ## Code Snippets
