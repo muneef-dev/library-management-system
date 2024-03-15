@@ -2,6 +2,7 @@
 
 This project is a Java application designed to manage member information for a library.
 
+
 ## Classes
 
 The project consists of the following classes:
@@ -9,6 +10,7 @@ The project consists of the following classes:
 * **Crud:** Handles database queries, including inserts, updates, deletes, and selects.
 * **DbConnection:** Establishes and manages the database connection.
 * **MemberManagementForm:** Provides the graphical user interface for interacting with member data.
+
 
 ## Functionality
 
@@ -19,6 +21,27 @@ The application supports the following functionalities:
 * **Viewing member details in a table:**
 * **Updating member information:**
 * **Deleting members:**
+
+
+## Here is our members
+* M.M.M MUNEEF - KEG/IT/2021/F/0102 [Muneef README.md](https://github.com/muneef-dev/lms.git)
+* M.H.F HAFSA - KEG/IT/2021/F/0074 - [Hafsa README.md](https://github.com/fathimahafsa21/LMS.git)
+* M.A.F HAKEEMA - KEG/IT/2021/F/0052 - [Hakeema README.md](https://github.com/fathimahakeema/LMS.git)
+
+
+## My Contributions to the Library Member Management System
+As the group leader for this project, I played a significant role in guiding the development process and ensuring the overall quality of the codebase. Here's a breakdown of my specific contributions:
+
+
+* ### Leadership and Code Review:
+Provided leadership and direction to the team members, ensuring consistent code style and adherence to best practices.
+Conducted code reviews, identifying and addressing potential issues to maintain code quality and functionality.
+ Ex : DbConnection class enhancements
+
+
+* ### As a developer
+Performed read and update the crud function, as you can see below.
+
 
 ## Code Snippets
 
@@ -57,36 +80,6 @@ public class Crud {
         return (T)(Boolean)(preparedStatement.executeUpdate()>0);
     }
 }
-
-private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        clearForm();
-        txtMemberId.setEditable(true);
-        btnSave.setText("Save");
-    }//GEN-LAST:event_btnClearActionPerformed
-
-    private void clearForm() {
-        txtMemberId.setText("");
-        txtName.setText("");
-        txtPhoneNumber.setText("");
-        txtEmail.setText("");
-        txtAddress.setText("");
-    }
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        if(txtMemberId.getText().equals("") || txtName.getText().equals("") || txtEmail.getText().equals("") || txtPhoneNumber.getText().equals("") || txtAddress.getText().equals("")){
-            JOptionPane.showMessageDialog(this, "fill all fiels!");
-            return;
-        }
-        try {
-            Crud.execute("INSERT INTO member VALUES(?,?,?,?,?)", txtMemberId.getText(), txtName.getText(), txtEmail.getText(), txtPhoneNumber.getText(), txtAddress.getText());
-            JOptionPane.showMessageDialog(this, "Member saved successfully!");
-            clearForm();
-            loadMembersIntoTable();
-        } catch (SQLException | ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(this, "Error saving member. Please check your input and try again.", "Error", JOptionPane.ERROR_MESSAGE);
-            Logger.getLogger(MemberManagementForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         try {
@@ -137,19 +130,6 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         clearForm();
         loadMembersIntoTable();
     }
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        try {
-            Crud.execute("DELETE FROM member WHERE member_id=?", txtId.getText());
-            JOptionPane.showMessageDialog(this, "Member deleted successfully!");
-            txtId.setText("");
-            clearForm();
-            loadMembersIntoTable();
-        } catch (SQLException | ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(this, "Error deleting member. Please check the member ID and try again.", "Error", JOptionPane.ERROR_MESSAGE);
-            Logger.getLogger(MemberManagementForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void loadMembersIntoTable() {
         try {
