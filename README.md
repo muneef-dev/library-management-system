@@ -45,7 +45,7 @@ Performed read and update the crud function, as you can see below.
 
 ## Code Snippets
 
-***Here is some shorted class***
+***Here is some class and functions***
 ```java
 
 public class DbConnection {
