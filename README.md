@@ -44,7 +44,7 @@ Conducted code reviews, identifying and addressing potential issues to maintain 
 Performed read and update the crud function, as you can see below.
 
 
-## Description of function
+## Description of functions
 
 `Crud class` helps to execute SQL queries safely by handling parameter binding and query execution, making database interactions easier and more strong.
 
